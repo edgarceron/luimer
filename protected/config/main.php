@@ -66,6 +66,15 @@ return array(
 			'desplegable' => false,
 			'version'=>0,
 		),
+		
+		'registro'=>array
+		(
+			'nombre'=>'Registro',
+			'modulo'=>'1-4',
+			'padre'=>'maestros',
+			'desplegable' => true,
+			'version'=>1,
+		),
 	),
 
 	// application components
@@ -92,11 +101,20 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=sofintbase',
+			'connectionString' => 'mysql:host=localhost;dbname=sofint_luimer',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '',
 			'charset' => 'utf8',
+		),
+		
+		'luimer'=>array(
+			'connectionString' => 'mysql:host=localhost;dbname=luimer',
+			'emulatePrepare' => true,
+			'username' => 'root',
+			'password' => '',
+			'charset' => 'utf8',
+			'class' => 'CDbConnection',
 		),
 	
 		'errorHandler'=>array(

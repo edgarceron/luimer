@@ -27,20 +27,40 @@
 
 	<?php echo "<?php echo \$form->errorSummary(\$model); ?>\n"; ?>
 
-<?php foreach($this->getModelAttributes() as $attribute): ?>
-    <div class="col-lg-4">
-	<div class="form-group">
-		<?php echo "<?php echo \$form->labelEx(\$model,'$attribute',array('class'=>'label label-success')); ?>\n"; ?>
-		<?php echo "<?php echo \$form->textField(\$model,'$attribute',array('class'=>'form-control')); ?>\n"; ?>
-		<?php echo "<?php echo \$form->error(\$model,'$attribute'); ?>\n"; ?>
+<?php 
+$aux = 0;
+foreach($this->getModelAttributes() as $attribute): 
+	if($aux % 3 == 0){
+	?>
+	<div class="form-row">
+	<?php
+	}
+	?>
+		<div class="form-group col-md-4">
+			<?php echo "<?php echo \$form->labelEx(\$model,'$attribute',array('class'=>'label label-success')); ?>\n"; ?>
+			<?php echo "<?php echo \$form->textField(\$model,'$attribute',array('class'=>'form-control')); ?>\n"; ?>
+			<?php echo "<?php echo \$form->error(\$model,'$attribute'); ?>\n"; ?>
+		</div>
+	<?php
+	if($aux % 3 == 2){
+	?>
 	</div>
-    </div>
-<?php endforeach; ?>
-    <div class="col-lg-12">
-	<div class="form-group">
-		<?php echo "<?php echo CHtml::submitButton('Submit',array('class'=>'btn btn-primary')); ?>\n"; ?>
+	<?php
+	}
+	$aux++;
+	?>
+<?php endforeach; 
+	if($aux % 3 <= 2){
+	?>
 	</div>
-    </div>
+	<?php
+	}
+?>
+	<div class="form-row">
+		<div class="form-group col-md-12">
+			<?php echo "<?php echo CHtml::submitButton('Guardar',array('class'=>'btn btn-primary')); ?>\n"; ?>
+		</div>
+	</div>
 <?php echo "<?php \$this->endWidget(); ?>\n"; ?>
 
 </div><!-- form -->
