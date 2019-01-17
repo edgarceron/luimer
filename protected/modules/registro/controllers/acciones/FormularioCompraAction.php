@@ -24,7 +24,7 @@ class FormularioCompraAction extends CAction
 				$dias = $_POST['dia'];
 				
 				$mes = date('m');
-				for($i = $mes; $i < $mes + 3; $i++){
+				for($i = $mes + 1; $i < $mes + 4; $i++){
 					$programacion = new Programacion;
 					$programacion['id_orden'] = $record['id'];
 					$programacion['fecha'] = date('Y') . "-" . $i . "-" . $dias;

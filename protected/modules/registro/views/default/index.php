@@ -22,7 +22,7 @@ $this->breadcrumbs=array(
 						<td><?php echo CHtml::button('Registrar nueva venta', array('onclick' => 'js:document.location.href="'. Yii::app()->createUrl('/registro/default/nuevaVenta'). '"', 'class' => 'btn btn-primary form-control')); ?></th>
 					</tr>
 					<tr>
-						<td><?php echo CHtml::button('Mis cobros de hoy', array('onclick' => 'js:document.location.href="'. Yii::app()->createUrl('/registro/default/cobros'). '"', 'class' => 'btn btn-primary form-control')); ?></th>
+						<td><?php echo CHtml::button('Cobros pendientes', array('onclick' => 'js:document.location.href="'. Yii::app()->createUrl('/registro/default/cobros'). '"', 'class' => 'btn btn-primary form-control')); ?></th>
 					</tr>
 				</table>
 			</div>

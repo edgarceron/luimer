@@ -5,7 +5,7 @@ class CobrosAction extends CAction
     public function run()
     {               
 		$criteria = new CDbCriteria;
-		$criteria->order = "fecha DESC";
+		$criteria->order = "fecha ASC";
         $cobros = Programacion::model()->findAll($criteria);
 
         $this->controller->render('cobros',array(
